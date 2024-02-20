@@ -1,0 +1,16 @@
+
+<div *ngIf="display" class="container border text-white h-screen mx-auto">
+    <div class="w-[70%] border mx-auto gap-5 flex ">
+        <div>
+            <img width="600" src="{{display.Poster}}" alt="">
+        </div>
+        <div>
+            <h1 class=" text-4xl font-extrabold">{{display.Title}} ({{display.Year}})</h1>
+            <div>
+                <h2 class="text-sm">{{display.Genre}}</h2>
+                <p class="text-xl">{{display.Plot}}</p>
+            </div>
+            <!-- <p class="text-xl font-medium">{{display.Awards}}</p> -->
+        </div>
+    </div>
+</div>

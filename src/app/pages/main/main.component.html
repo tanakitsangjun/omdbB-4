@@ -1,0 +1,31 @@
+<div class="flex  flex-col items-center mt-32 bg-[#202124] relative">
+    <!-- ... other content ... -->
+    <div>
+        <!-- <img class="mx-auto block" width="100" src="https://www.freepnglogos.com/uploads/netflix-logo-app-png-16.png" alt=""> -->
+        <img  width="500" class="" src="https://logos-world.net/wp-content/uploads/2020/04/Netflix-Logo.png" alt="google Logo" />
+      </div>
+    <div class="md:w-[584px] mx-auto mt-7 flex w-[92%] items-center rounded-full border hover:shadow-md relative">
+        <div class="pl-5">
+        </div>
+        <input type="text" placeholder="Search" (keyup)="getdata(input)" #input class="text-white w-full bg-transparent z-30 rounded-full py-[14px] pl-4 outline-none" />
+        <div class="pr-5">
+            <svg xmlns="http://www.w3.org/2000/svg" (click)="getdata(input)" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+        </div>
+    </div>
+    <div *ngIf="data2?.Search" class="w-[45%] md:w-[584px] p-2 z-0 border  bg-zinc-800  ">
+        <div *ngFor="let item of data2?.Search"  class=" px-4 py-1 ">
+       <button (click)="navigate(item.imdbID)" class="w-full font-semibold  text-white hover:bg-zinc-700 text-start cursor-pointer">{{item.Title}}</button>
+        </div>
+        <div class="flex justify-between text-white flex-row-reverse">
+            <button (click)="nextpages(input,1)" class="">Next</button>
+                <h1>{{pages}}/{{data2?.totalResults}}</h1>
+            <button (click)="prev(input,1)">prev</button>
+        </div>
+    </div>
+
+    <!-- ... other content ... -->
+</div>
